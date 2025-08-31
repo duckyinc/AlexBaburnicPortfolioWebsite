@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Just in case your moronic brain forgets it, press '!' then TAB to create a HTML boilerplate in VS Code. Duh! -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Baburnic Portfolio Site</title>
+    <link rel="stylesheet" href="./homeStyle.css">
+</head>
+
+<script>
+    function showMessage(type) {
+        switch(type){
+            case 0:
+                alert("You can keep clicking on other things here to find some hidden easter eggs.");
+                break;
+            case 1:
+                alert("I also do web-design (as you might tell from this site) and occasionally IT.");
+                break;
+            case 2:
+                alert("I hope you enjoy your stay here!");
+                break;
+            case 3:
+                alert("I do a lot of my work in Unity, so get used to seeing this frequently.");
+                break;
+        }
+    }
+</script>
+
+<body>
+    <!--Heading Intro Body (Really ugly formatting, since we are using PRE. Sorry my coding OCD is going nuts looking at this formatting.)-->
+    <div style="align-content: center;">
+        <pre class="language-aspnet" tabindex="0"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name" onclick="showMessage(0)">AlexBaburnicsPortfolioWebsite</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name" onclick="showMessage(3)">MonoBehavior</span></span>
+<span class="token punctuation">{</span>
+    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Debug<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string" onclick="showMessage(2)">"Hello everyone! Welcome to my portfolio."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Debug<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string" onclick="showMessage(1)">"I am a software developer, 
+            specializing in game development 
+            and other neat things"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+    </div>
+    <br><br><br><br>
+    <!-- style="display: flex; justify-content: center; gap: 10px;" -->
+    <div class="fadeInUp-animation" style="display: flex; justify-content: center; gap: 10px;">
+        <a href="./projects.html" style="text-decoration: none;">
+            <button class="btnType1" style="display: block; margin:auto;">Projects</button>
+        </a>
+        <a href="./reel.html" style="text-decoration: none;">
+            <button class="btnType1" style="display: block; margin:auto;">Reel</button>
+        </a>
+        <a href="./resume.html" style="text-decoration: none;">
+            <button class="btnType1" style="display: block; margin:auto;">Resume</button>
+        </a>
+        <a href="./contact.html" style="text-decoration: none;">
+            <button class="btnType1" style="display: block; margin:auto;">Contact</button>
+        </a>
+    </div>
+
+    <script src="./perspectiveScript.js"></script>
+</body>
+</html>

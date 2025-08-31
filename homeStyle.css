@@ -1,0 +1,130 @@
+:root{
+    --yellow: hsl(39, 77%, 57%);
+    --blue: hsl(204, 53%, 57%);
+    --white: hsl(334, 7%, 95%);
+    --green: hsl(123, 54%, 52%);
+    --bluishGreen: hsl(155, 58%, 57%);
+}
+
+/* Might be able to remove later!!!! */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #181818;
+    background-image: linear-gradient(to right, #181818, #242424, #181818);
+    color:white;
+    min-block-size: 100dvh;
+    display:grid;
+    align-content: center;
+    height:auto;
+    place-items: center;
+}
+
+pre{
+    --function:var(--yellow);
+    --keyword:var(--blue);
+    --punctuation:var(--white);
+    --string:var(--green);
+    --className:var(--bluishGreen);
+
+    font-size: 1rem;
+    font-weight: bold;
+    background: hsl(222, 45%, 7%);
+    padding: 2rem;
+    border-radius: 1rem;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+    /*transform: perspective(5000px) rotateY(20deg) rotateX(20deg);*/
+    transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+}
+
+.function{
+    color: var(--function);
+}
+
+.keyword{
+    color:var(--keyword);
+}
+
+.punctuation{
+    color:var(--punctuation);
+}
+
+.string{
+    color:var(--string);
+}
+
+.class-name{
+    color:var(--bluishGreen);
+}
+
+pre > * {
+    text-shadow: 0 0 0.3rem currentColor;
+}
+
+pre::before,
+pre::after{
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+pre::before{
+    inset: 0.75rem;
+    background: black;
+    transform: translateZ(-49px);
+    filter:blur(10px);
+    opacity: .5;
+}
+
+pre::after{
+    inset:-1rem;
+    background: linear-gradient(-45deg, red, orange);
+    transform: translateZ(-50px);
+}
+
+
+.btnType1 {
+    background: linear-gradient(-45deg, hsl(222, 45%, 7%), rgb(59, 59, 59));
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    transition-duration: 0.2s;
+}
+
+.btnType1:hover{
+    background: linear-gradient(-45deg, red, orange);
+    /*background-color: #f82530;*/
+    /*box-shadow: 0 0 25px #ff1111c2, 0 0 50px #ff11118f, inset 10px 10px 15px #ff111167, inset -10px -10px 15px #ff11112f;*/
+    transform: scale(1.15);
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.fadeInUp-animation {
+    animation: 1.5s fadeInUp;
+}
