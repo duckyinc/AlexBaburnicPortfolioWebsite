@@ -6,7 +6,7 @@
     <title>Projects - Alex Baburnic Portfolio Site</title>
     <link rel="stylesheet" href="./otherStyle.css">
 </head>
-<body>
+<body style="overflow-x: hidden;">
     <div class="topNavBar" >
         <h1>Projects</h1>
         <a href="./index.html" style="text-decoration: none;">
@@ -32,14 +32,63 @@
             <h1>Unsung Heroes 1898</h1>
             <h3>Lead/Sole Developer (Engineer, 3D Artist, Animator)</h3>
             <p>
-                <b>Engineer</b>
-                <p>Insert general stuff here</p>
-                <b>3D Art</b>
-                <p>Insert general stuff here</p>
-                <b>Venomic Games (Publishing & Marketing)</b>
-                <p>Insert general stuff here</p>
                 <a href="https://store.steampowered.com/app/3812590/Unsung_Heroes_1898/" style="color:red;">Steam Page</a> |
                 <a href="https://venomicgames.com" style="color:red;">Venomic Games</a>
+            </p>
+            <p>
+                <b>Synopsis</b>
+                <p>Unsung Heroes 1898 is a first-person shooter inspired by older <i>Battlefield</i> games, taking place during the Spanish-American War of 1898. By being one of 
+                    the only games to feature this historic conflict, the game boasts unprecedented accuracy in retelling the events of the conflict. It also features a 
+                    mechanic called "combatant shift" which allows players to play as any allied soldier on the battlefield at any time with a press of a button. Rather than 
+                    feeling like a lone hero that defeats hundreds, this game encourages players to use their whole army effectively and to be frugal with allied loses. Unsung 
+                    Heroes 1898 is an early access title developed in Unity.
+                </p>
+                <b>Engineer</b>
+                <p>As the sole developer behind the project, I developed all the backend code for the game. This initially involved create a player movement system, featuring
+                    crouching, sprinting, leaning, and going prone. There is also a slip system that prevents soldiers from being able to scale steep surfaces. In addition, 
+                    footstep SFX changes dynamically based on the ground surface and the movement speed of the player. Weapons use a raycast system to simulate firing bullets.
+                    Each weapon has their own range of fire and damage per bullet, plus each soldier has multiple hitboxes that add damage multipliers (body is x1, head is x2, 
+                    foot and leg is x0.5, etc.). Combatant shift (originally referred to as "soldier switching") allows players to open a map view and select and play as any soldier 
+                    at any time. This means that each soldier needs to have its own personal soldier ID unique to that soldier. This system is modular and easy to configure within editor. 
+                    It acts as the main brain for each soldier unit, communicating with various internal components (such as the AI agent component) to take control as needed. Infantry AI
+                    is its own component within each soldier, featuring a custom-made statemachine. This statemachine can switch between group behaviors (such as regroup, defend, charge, etc.)
+                    and between subgroup actions (fight while behind cover, run to target, etc.). The soldiers are also context sensitive, being able to hide behind nearby cover or communicate 
+                    to nearby allies that an enemy is nearby.<br><br>
+                    Infantry soldiers correspond to a troop or unit. This group can be collectively controlled by a commanding officer who can issue commands to the entire troop (charge an objective,
+                    take defensive positions, etc.). Commanding officers will generally follow a battle strategy set by the player at the beginning of a battle. For further customization, the 
+                    player can create their own battle strategies from scratch, down to the most minute detail such as waiting at a location for a set period of time. The battle
+                    management system keeps track of the general progress of the battle, such as displaying the number of soldiers for each side of the conflict and how many
+                    objectives are in possesion by the enemies or allies.<br><br>
+                    Seperate from infantry soldiers, players can also play as commanding officers directly (cavalry units) or as artillery units. These each have a different 
+                    movement system to each other and play differently from infantry. Commanding officers need to steer their horse to get around, but can still fire handguns
+                    while in motion. They can issue commands to their troop, overwritting whatever order was being followed from the battle strategy. Artillery units can only 
+                    rotate in place, but can deal a great amount of damage thanks to their explosive power and range.<br><br>
+                    Lastly, R&D is going into user-generated content in the form of Steam Workshop support. Players will be able to share and download custom battle strategies,
+                    share language/localization files for the game's UI, and create and share custom maps using a built-in map editor.
+                </p>
+                <b>Art & Animation</b>
+                <p>Each firearm and artillery weapon had to be modeled and animated in Blender, as there were not any available assets to use elsewhere due to the relative rarity
+                    of these weapons. Each weapon was modeled after real-world references and were animated to operate as closely as possible to their real counterparts. Soldiers 
+                    were also modeled with a certain degree of accuracy, most notably in the design of their uniforms. This was achieved by creating a base humanoid mesh in the 
+                    open-source program MakeHuman and modeled upon again in Blender. All weapons and soldiers have a custom made animation controller that dynamically adjusts and 
+                    blends animations states as needed. Particle simulations were also created for artillery shell explosions, blood splatter, bullet ricochet, morning fog, and other
+                    things.<br><br>
+                    While much of the nature assets featured in the game come from publically available assets, many of the assets where further modified to create optimized 
+                    LODS and material baking. Especially in heavy forested scenes like San Juan, this optimization effort could buy ten to thirty frames of extra performance. 
+                    The game currently uses Unity's High Definition Render Pipeline to achieve high-end lighting and post-processing effects. The game also features an interactive 
+                    museum where players can read into the history of the conflict, as well as view the various firearm models in exquisite detail. Lastly, all the game's extensive
+                    UI was both coded and designed by myself. I performed rigorous testing to make sure that the UI works both with mouse, keyboard, and controller, as well as support 
+                    language localization.
+                </p>
+                <b>Additional Work</b>
+                <p>After two years, the game was released in early access on Itch.io as Alpha 1. Due to feedback on the state of the game, nearly all of the components and features of the 
+                    project were reworked, from the movement to the AI. Thus, the game essentially was rebuilt from the ground-up to fix many of the issues that existed in the original version.
+                    The game currently is in Alpha 2 which is substaintely more refined and opens the possibility for future content expansion.<br><br>
+                    To advertise the game and build a community, I started a game dev youtube channel that documents the development of the game. I also formed the company Venomic Games and 
+                    created a site from scratch using HTML, CSS, and JavaScript. In addition, I have also created other social media presences such as Twitter/X, Bluesky, TikTok, Instagram, and
+                    Threads. Due to the nature of the game, I take feedback seriously and aim to create an environment where individuals are able to share their honest opinions about the game
+                    without fear of backlash.
+                </p>
             </p>
         </div>
     </div>
@@ -51,12 +100,44 @@
         <div>
             <h1>Syke</h1>
             <h3>Engineer</h3>
+            <a href="https://store.steampowered.com/app/2876980/Syke/" style="color:red;">Steam Page</a>
             <p>
+                <b>Synopsis</b>
+                <p>Syke is a first-person exploratory puzzle game with odd geometric levels inspired by M.C. Escher art. It features a singeplayer story about an individual
+                    uncovering the lore behind their youth's love. This project was made within a large team of thirty over the course of a year and was developed in Unreal 
+                    Engine 5.
+                </p>
                 <b>Engineer</b>
-                <p>Insert general stuff here</p>
-                <b>3D Art</b>
-                <p>Insert general stuff here</p>
-                <a href="https://store.steampowered.com/app/2876980/Syke/" style="color:red;">Steam Page</a>
+                <p>My first task as an engineer was to create one of two components for the player gravity system. While another engineer would focus on a gravity system
+                    involving raycasts that would make players gravitate the the slope of a surface, I developed a seperate system that used volumes to dictate gravity direction.
+                    When the player would walk within these volumes, the player's gravitational pull would change depending on the direction set by the level designer. This
+                    system, developed in C++, was light-weight, modular, easily-configurable in editor, and also worked well with the raycast system. I then developed the world 
+                    event system, which would allow level designers to create triggers within the levels that could change the environment (such as picking a book to move a bookshelf
+                    or solving a puzzle to open a secret area). This system is modular, involving three components, that can easily be configured in-editor by designers. This 
+                    was also developed in C++. Both the world event system and the volumetric gravity system had documentation I preped and provided to the design team to allow 
+                    them to learn their usage quickly.<br><br>
+                    I developed the main puzzle mechanic for the library level, which tasks players to find four books scattered around the environment and place them on a pedestal 
+                    that lowers a walkway to an otherwise inaccessible area. The final part of the puzzle involves decoding various cypher diagrams within each book and placing
+                    them on the correct bookshelves in order to spell a word. Solving this puzzle completes the level. My responsibility was the general design of this puzzle, 
+                    the development of its backend functionality, and the process of rigorously testing it. 
+                </p>
+                <b>Strike Team</b>
+                <p>Towards the final months of development, the game lacked a proper intro and starting menu. I was one of an initially two-person team (internally referred to as 
+                    the "strike team") to help design, implement, and test the tutorial level and starting menu. I aided in the initial design philosophy for the tutorial and
+                    developed the three main puzzles featured in the level using both the world event system and some simple brute-force Blueprint coding. I also implemented a 
+                    simple cutscene mechanic to show environment changing effects after feedback from early tests proved the tutorial level to be too confusing. I developed a 
+                    tutorial prompt system that would display a UI element to guide the player, though this feature was eventually scrapped in the final version. Lastly, I created
+                    the backend for the starting menu UI, including the options menu and the singleplayer UI that would allow users to either create a new save game or load an 
+                    existing one. 
+                </p>
+                <b>Technical Artist</b>
+                <p>I originally volunteered to implement a twisting hallway for the game that was featured prominently in concept art. This hallway would be straight and flat, but could 
+                    be triggered to twist and distort itself so that the other end would be nearly upside-down. I modeled a rough implementation of this hallway, complete with a rig that 
+                    was animated to feature a twisting motion. Though it was implemented into the engine, it would never be added to the game due to changing level designs and various
+                    unresolved bugs with movement on the object. As mentioned previously, there was also a moving walkway featured in the final puzzle of the library level. This signifcantly
+                    simpler animation, which was also largely coded in Blueprints, is featured in the final version of the game. Similar moving walkways and bookshelves also exist in other 
+                    parts of the library level.
+                </p>
             </p>
         </div>
     </div>
@@ -72,11 +153,18 @@
             <h1>Korrupt</h1>
             <h3>Engineer</h3>
             <p>
-                <b>Engineer</b>
-                <p>Insert general stuff here</p>
-                <b>3D Art</b>
-                <p>Insert general stuff here</p>
                 <a href="https://n0monis.itch.io/korrupt" style="color:red;">Itch.io Page</a>
+                <p>I developed the player movement system, which plays similarily to traditional 2D platformers, but features double jumping and dashing abilities. 
+                    Combat was implemented with the player being able to perform ranged attacks and short-distance melee attacks simultaneously. The game features a 
+                    rewind-time respawn feature (think "Groundhog Day" or "Edge of Tomorrow") that could be initiated at any time. Environment triggers were developed 
+                    to initiate tutorial messages or change the player camera's motion. I also implemented a way for players to pan the camera around the player using 
+                    their mouse. Regarding enemy AI, I developed the enemy AI to have unique behaviors depending on the type of enemy, as well as made the system modular
+                    and editor-customizable to allow our team's designers to experiment and design levels how they saw fit. The boss enemy in the game is particularily 
+                    interesting, since it features staged behaviors that provide the player a challenging and strategy-provoking gameplay experience. I developed various 
+                    systems to connect sprite animations (both for the player and the enemies) to the dynamic movements and inputs of the game. As with other projects, I
+                    also developed a significant portion of the game's UI backend. Lastly, I was responsible for coordinating with team memebers on how to use the Unity engine 
+                    and how to make commits to GitHub.
+                </p>
             </p>
         </div>
     </div>
@@ -89,11 +177,42 @@
             <h1>Teach A Fish To Man</h1>
             <h3>Engineer</h3>
             <p>
-                <b>Engineer</b>
-                <p>Insert general stuff here</p>
-                <b>3D Art</b>
-                <p>Insert general stuff here</p>
                 <a href="https://teachafish.itch.io/teach-a-fish-to-man" style="color:red;">Itch.io Page</a>
+            </p>
+            <p>
+                <b>Synopsis</b>
+                <p>This project was part of the University of Utah's Alternative Game Development course, with a focus on creating a game that could have a political or
+                    underlying message (games not made specifically for being entertaining). This game teaches players the dangers of over-fishing, by flipping the tables
+                    and letting players play a fish out of water catching humans from a small seaside village to feed the local fish school. As players would catch humans,
+                    the human population would slowly become more endangered and the environment would dynamically change to reflect this. If players caught too much all at
+                    once, the human population would go extinct and the player would get a game over for not being able to feed the fish community. Players are thus forced to
+                    learn and understand the balance needed to keep the human population steady while also being able to supply the fish school.
+                </p>
+                <b>Engineer</b>
+                <p>I developed an initial concept for the game that would have played like a traditional 2D platformer. This early prototype had player movement and enemy AI that 
+                    would run away from the player if they got too close. This prototype was scrapped when the team decided to make the game be a top down 3D platformer instead.
+                    I developed a new player movement system and a new modular enemy AI system that would make some humans run away from the player while others would hide inside 
+                    their homes (which are inaccessible to the player). In addition, a complete economy and species endangerment system was developed. The economy would exchange
+                    caught humans for money, which could be used to buy upgrades to make hunting easier. It would also simulate a supply and demand system for the fish school, where
+                    the school would demand a certain amount of humans and store any surpluses for the following days. The endangerment system would simulate the various levels of
+                    species endangerment for the humans (least-concerned, vulnerable, endangered, extinct), which would affect the appearance of the environment, the number of humans 
+                    spawned in the world, and the behavior of the human AI. Lastly, I developed the game's UI, complete with save states and other quality-of-life features. My engineering
+                    work was made using Unreal Engine's Blueprint system.
+                </p>
+                <b>3D Art</b>
+                <p>Halfway through development, one of our artists were struggling with developing a suitable environment for the game. After some undesired prototypes, I stepped in to 
+                    block out and model the seaside village that would act as a base for the artist to add further details. Due to the game's top down perspective, this environment was 
+                    designed to have a tappering height as the player went further from the shore and featured buildings, docks, alleyways, and parks that kept the style of a Mediterranean
+                    village. 
+                </p>
+                <b>Team Management</b>
+                <p>During development, team leadership had spotty attendance and communication with team members was beginning to fall apart. While this was unfortunately common 
+                    among many of the other teams in the course, I wanted to make sure that our project would be complete on time and with its intended features. With the approval
+                    of the team, I stepped in as the "unofficial" team lead to help direct team members on weekly goals and conduct team meetings. I made sure that everyone was 
+                    doing their part or, at the very least, kept track of any hinderances that might slow down development. When our team's leader was around, I made sure to communicate 
+                    thoroughly on the progress of development and never "over-stayed" my management position. This effort made us one of the few teams in the course to have a finished
+                    game by the end of the semester.
+                </p>
             </p>
         </div>
     </div>
@@ -106,10 +225,18 @@
             <h1>PixEdit</h1>
             <h3>Engineer</h3>
             <p>
-                <b>Engineer</b>
-                <p>Insert general stuff here</p>
-                <b>3D Art</b>
-                <p>Insert general stuff here</p>
+                <p>PixEdit was a simple application made over the course of a week to create a pixel editor that could make sprites and animations. I developed the initial system
+                    for saving and loading sprites using a custom-made file type and developed the first user tools to allow users to draw within the application. This involved
+                    adding a color picker and developing a 2D grid that users could paint individual pixels within. I also created tools for erasing pixels, since the sprites
+                    supported transparent backgrounds. I designed much of the application's UI and settings, including the ability to allow users to set various resolutions for
+                    sprites.<br><br>
+                    I then focused on the highlight feature of our application; an animation toolset. This tool allows users to create animation frames using the created sprites.
+                    My work involved developing animation frame management (add frame, delete frame, go to frame, etc.), animation playback (including speed of playback), and adding
+                    a helpful "onion-skin" toggle for users to easily make smooth animations.<br><br>
+                    Lastly, I was largely responsible for creating documentation for the application, including recording a demo video and providing a "code style" document. All of
+                    the code was written in C++ using QT, with QT Designer being used to create the UI. Frequent meetings were held within our small team of three to ensure that the 
+                    project would be completed on time and meet the requirements set out initially.
+                </p>
             </p>
         </div>
     </div>
@@ -122,10 +249,14 @@
             <h1>The Deafening Truth</h1>
             <h3>3D Artist & Animator</h3>
             <p>
-                <b>Engineer</b>
-                <p>Insert general stuff here</p>
-                <b>3D Art</b>
-                <p>Insert general stuff here</p>
+                <p>This was a short film made for the University of Utah's Machinima course. The film describes the struggles of an escaped robot trying to live out in the 
+                    real world while authorities desperately try to wrangle it back into the lab where it was created. <br><br>
+                    I modeled and animated the apartment burning sequence, which features environmental destruction and particle simulations in the form of fire and smoke. I 
+                    modeled the alleyway environment featured prominently throughout the short film and created various 2D images and infographics that aid in telling important 
+                    story beats. I animated both the end credits and after-credits scene, which features unique camera motion and animations for a four-legged rig as well as 
+                    the main character. Lastly, I used (at the time) new AI voice-cloning tech to create the voice for the animatronic main character. With the exception of 
+                    the apartment burning sequence, which was animated and rendered using Blender's cycles renderer, all other shots were rendered in Unreal Engine 5.  
+                </p>
             </p>
         </div>
     </div>
@@ -138,10 +269,13 @@
             <h1>Dungeons & Distrubtions (Edutainment Software)</h1>
             <h3>Engineer</h3>
             <p>
-                <b>Engineer</b>
-                <p>Insert general stuff here</p>
-                <b>3D Art</b>
-                <p>Insert general stuff here</p>
+                <p>This was a project to create a game that could be used for educational purposes. The team wanted to create a linear game inspired by themes from Dungeons &
+                    Dragons to teach users about solving problems related to distributions. I was tasked with creating the backend system for displaying questions and providing
+                    a four-option multiple-choice answer selection. I also worked on various other aspects of the application's UI, such as the startup screen and the connection
+                    between the static UI and much of the dynamic elements. All the code was made with C++ in the QT IDE and all the UI work was completed with QT Designer. 
+                    Despite having very limited knowledge of D&D, I was able to frequently and effectively communicate with the team on how the application would appear and 
+                    function.
+                </p>
             </p>
         </div>
     </div>
@@ -174,13 +308,22 @@
             <img src="./images/GravityLineCoverArt.JPG" style="width:80%; margin: 20px auto; border-radius: 25px;">
         </div>
         <div>
-            <h1>Gravity Line (Cancelled)</h1>
+            <h1>Gravity Line (Unfinished/On Hiatus)</h1>
             <h3>Lead/Sole Developer (Engineer, 3D Artist, Animator)</h3>
             <p>
-                <b>Engineer</b>
-                <p>Insert general stuff here</p>
-                <b>3D Art</b>
-                <p>Insert general stuff here</p>
+                <p>This was the first Unity project that I actually gave a decent amount of time working on, as well as it being the first time I ever used Blender for 3D art.
+                    I implemented arcade vehicle physics, developed a powerup system, made the ability for players to customize their vehicles, and created a story-leveling 
+                    system that would slowly unlock vehicles and powerups as the game progressed. There was also a simple enemy AI boss that would throw missles and bombs at
+                    the player.<br><br>
+                    I made five vehicle models, inspired by real-world vehicles, which were complete with animatable wheels and a customizable body color shader. The envirnoments,
+                    though simple, had many interactive elements, such as spinning fans or moving walls. I also modeled LOD models for the various objects in the environment to 
+                    maximize game performance. I designed the UI to be inspired by retro PC UI from the 80s and early 90s, much of which was non-static and fully customizable in
+                    the Unity editor as opposed to in GIMP (the image editor I used for the project). I also experimented and implemented particle simulations for cloud generation
+                    and tire smoke for the vehicles.<br><br>
+                    Before I cancelled the project, I had planned to create an endless mode and a level editor for players to continue playing the game once they had finished the 
+                    main story. The project was ultimately put on hold when I started going to college and felt burnt-out from the project (though the files are saved for potential
+                    revisiting).
+                </p>
             </p>
         </div>
     </div>
